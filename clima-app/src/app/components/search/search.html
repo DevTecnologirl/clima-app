@@ -1,0 +1,17 @@
+<div class="search-container">
+  <input 
+    type="text" 
+    placeholder="Digite a cidade..."
+    [(ngModel)]="city"
+  >
+  <button (click)="searchWeather()">Buscar</button>
+</div>
+
+<div *ngIf="weatherData" class="weather-box">
+  <h2>{{ weatherData.name }}</h2>
+  <p>🌡 Temperatura: {{ weatherData.main.temp }}°C</p>
+  <p>😶‍🌫️ Sensação térmica: {{ weatherData.main.feels_like }}°C</p>
+  <p>💧 Umidade: {{ weatherData.main.humidity }}%</p>
+  <p>🌬 Vento: {{ weatherData.wind.speed }} km/h</p>
+  <p>☁ Situação: {{ weatherData.weather[0].description }}</p>
+</div>
